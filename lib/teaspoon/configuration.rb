@@ -63,13 +63,14 @@ module Teaspoon
     class Suite
       attr_accessor :matcher, :helper, :javascripts, :stylesheets,
                     :boot_partial, :body_partial,
-                    :hooks, :expand_assets, :js_extensions
+                    :hooks, :expand_assets, :js_extensions, :javascript_packs_with_chunks
 
       def initialize(name = nil)
         @matcher       = "{spec/javascripts,app/assets}/**/*_spec.{js,js.coffee,coffee}"
         @helper        = "spec_helper"
         @javascripts   = []
         @stylesheets   = ["teaspoon"]
+        @javascript_packs = []
 
         @boot_partial  = "boot"
         @body_partial  = "body"
